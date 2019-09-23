@@ -9,6 +9,7 @@ export const pipesComponentsList = [FilterPipe];
   declarations: pipesComponentsList,
   exports: pipesComponentsList
 })
+
 export class pipesModule {
   static forRoot(): ModuleWithProviders {
     return {

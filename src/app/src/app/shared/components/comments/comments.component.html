@@ -1,0 +1,34 @@
+<h5 *ngIf="comment_data?.length<1">No Comments found</h5>
+<div *ngIf="comment_data?.length>0" class="comment-list-section">
+  <div class="col-md-10">
+    <div class="comment-card" *ngFor="let comment of comment_data;let index = index">
+      <div class="comment-card-header clearfix">
+        <span class="pull-left">
+          <img class="comment-img" *ngIf="comment.user.profileImg" [src]="comment.user.profileImg" alt />
+          <span class="comment-name" [innerText]="comment.user.name"></span>
+        </span>
+        <span class="comment-time text-muted" [innerText]="comment.createdOn | timediff"></span>
+      </div>
+      <div class="comment-card-body">
+        <div class="comment-text">
+          <div [innerHtml]="comment.text"></div>
+          <div class="comment-action-items">
+            <span class="btn btn-link" (click)="likeComment(comment)" [ngClass]="{'comment-liked': comment.commentLiked}">Like</span>
+            <span class="btn btn-link" (click)="replyComment(index, comment)">Reply</span>
+          </div>
+        </div>
+      </div>
+      <div class="comment-reply-section">
+        <div datacontainer></div>
+        <div *ngIf="comment?.replyComment?.length>0">
+          <div *ngFor="let reply of comment.replyComment">
+            <div class="comment-reply-text">
+              <span [innerText]="reply.commentTxt"></span>
+              <span class="comment-time text-muted" [innerText]="reply.currentDate | timediff"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

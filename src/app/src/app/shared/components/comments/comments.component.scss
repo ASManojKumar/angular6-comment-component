@@ -1,0 +1,64 @@
+.comment-list-section {
+  margin-top: 20px;
+  height: 400px;
+  overflow: auto;
+  .comment-card {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    .comment-card-header {
+      .comment-img {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+      }
+      .comment-name {
+        margin-left: 5px;
+      }
+      .comment-time {
+        margin-left: 20px;
+        font-size: 12px;
+      }
+    }
+    .comment-card-body {
+      .comment-text {
+        margin-left: 29px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        width: 90%;
+        .comment-action-items {
+          .btn {
+            padding: 0;
+            font-size: 12px;
+            color: #385898;
+            &.comment-liked {
+              color: #2078f4;
+              font-weight: bold;
+            }
+            &:hover {
+              text-decoration: none;
+            }
+          }
+          .btn+.btn {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  .comment-reply-section,
+  .comment-reply-section .comment-reply-text {
+    margin-left: 29px;
+    width: 90%;
+    margin-top: 10px;
+    .comment-time {
+      margin-left: 20px;
+      font-size: 12px;
+    }
+  }
+}
+
+.comments-no-result {
+  padding-top: 5vh;
+  height: calc(50vh - 240px);
+}
